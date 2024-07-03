@@ -1,7 +1,24 @@
-import React from "react";
+import React,{useEffect, useState} from "react";
+import axios from 'axios';
+
 import "./Post.css";
 
 export default function Post() {
+
+  const [posts, setPosts] = useState([]); // Correctly initialize the useState hook
+  useEffect(() => {
+   
+    axios.get('http://localhost:8000/post/get')
+      .then((res) => {
+        if (res.data.success) {
+          console.log('Fetched data:', res.data);
+          setPosts(res.data.existingPost);
+        }
+      })
+      .catch((error) => {
+        console.error('Error fetching posts:', error);
+      });
+  }, []);
   return (
     <div className="post">
       <div className="postContainer">
@@ -13,6 +30,9 @@ export default function Post() {
         <div className="postCenter">
             <div className="postCaption">
                 Hello I am Venath
+                {posts.map((p) => (
+              <div key={p._id}>{p.title}</div>
+            ))}
             </div>
             <img src="/images/1.jpg" alt="" className="postedImage" />
         </div>

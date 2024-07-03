@@ -9,6 +9,7 @@
 
 }
 .postImage{
+    
     height: 32px;
     width: 32px;
     border-radius: 50%;
@@ -45,8 +46,8 @@
 margin: 20px 0;
 }
 .reactionPic{
-    width: 24px;
-    height: 24px;
+    width: 32px;
+    height: 32px;
     margin-left: 1px;
     cursor: pointer;
 }

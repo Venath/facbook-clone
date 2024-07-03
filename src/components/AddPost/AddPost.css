@@ -39,7 +39,7 @@ box-shadow: 5px 5px 13px 5px rgba(0,0,0,0.14);
 }
 .addPostOptions{
     display: flex;
-    margin-left: 40px;
+    margin-left: 20px;
 }
 .addPostOption{
     display: flex;
